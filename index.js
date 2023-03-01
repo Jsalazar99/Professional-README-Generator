@@ -28,10 +28,10 @@ return `
 # Table of Content section 
 
 * [Description](#description)
-* [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
 * [Test](#test)
+* [Installation](#installation)
 * [License](#license)
 * [Questions](#questions)
 
@@ -40,7 +40,7 @@ return `
 
 GitHub profile: 
 
-* Github Username: <a href="${data.github}">${data.github}</a>
+* Github Username: <a href="https://github.com/${data.github}">${data.github}</a>
 
 
 ## Description of Project: 
@@ -75,6 +75,9 @@ ${renderLicenseBadge(data.license)}
 
 Use the command <em>${data.install}</em> to start installation of dependencies here. 
 
+# Questions 
+
+- Questions for this application:
 
 `};
 

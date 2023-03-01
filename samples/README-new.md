@@ -5,23 +5,24 @@
 # Table of Content section 
 
 * [Description](#description)
-* [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
 * [Test](#test)
+* [Installation](#installation)
 * [License](#license)
 * [Questions](#questions)
+
 
 ---
 
 GitHub profile: 
 
-* Github Username: <a href="JSalazar99">JSalazar99</a>
+* Github Username: <a href="https://github.com/JSalazar99">JSalazar99</a>
 
 
 ## Description of Project: 
 
-intro
+Intro text. 
 
 ---
 
@@ -37,8 +38,6 @@ intro
 - Instructions for testing this application:
 
 
----
-
 ## License 
 
 License provided by:  
@@ -47,9 +46,13 @@ License provided by:
 
 --- 
 
+
 # Installation
 ## To Run this Application 
 
 Use the command <em>npm i</em> to start installation of dependencies here. 
 
+# Questions 
+
+- Questions for this application:
 
