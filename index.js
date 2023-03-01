@@ -5,10 +5,27 @@ const path = require("path");
 
 // Function to start the file generator
 //const generateFile = ({ title, github, description, license, install }) => `
-const generateFile = (data) => `
+const generateFile = (data) => {
+
+    const renderLicenseBadge = (license) => {
+        if (license === "MIT") {
+            return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+        }
+    }
+return `
 # Project Title: ${data.title} 
 
 ---
+
+# Table of Content section 
+
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Test](#test)
+* [License](#license)
+* [Questions](#questions)
+----
 
 Here is a link to my GitHub profile: ${data.github}
 
@@ -18,15 +35,17 @@ ${data.description}
 
 ## License 
 
-License provided by:  ${data.license}
+License provided by:  ${renderLicenseBadge(data.license)}
 
 --- 
 
+# Installation
 ## To Run this Application 
 
 Use the command ${data.install} to start installation of dependencies here. 
 
-`;
+
+`};
 
 // Array of questions for user input
 const questions = [
@@ -70,7 +89,7 @@ const questions = [
 
 // Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile('./samples/README-new.md', generateFile(data), (err) =>
+    fs.writeFile(fileName, generateFile(data), (err) =>
       err ? console.log(err) : console.log('README file is created!')
     );
 }
@@ -82,7 +101,7 @@ function init() {
             // will this work?
             /* const newFile = generateFile(questions)
             fs.writeFile('README-new.md', newFile); */
-            writeToFile('/samples/README-new.md', response);
+            writeToFile('./samples/README-new.md', response);
             console.log('README file is being created now!');
         })
 }
