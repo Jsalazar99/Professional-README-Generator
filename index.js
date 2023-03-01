@@ -11,38 +11,69 @@ const generateFile = (data) => {
         if (license === "MIT") {
             return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
         }
+        if (license === "Apache 2.0") {
+            return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
+        }
+        if (license === "GPL 3.0") {
+            return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`
+        }
+        if (license === "BSD 3") {
+            return `[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`
+        }
     }
 return `
 # Project Title: ${data.title} 
 
----
 
 # Table of Content section 
 
+* [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
 * [Test](#test)
 * [License](#license)
 * [Questions](#questions)
-----
 
-Here is a link to my GitHub profile: ${data.github}
+
+---
+
+GitHub profile: 
+
+* Github Username: <a href="${data.github}">${data.github}</a>
+
 
 ## Description of Project: 
 
 ${data.description}
 
+---
+
+# Usage
+ - Instructions for use of this application:
+
+
+# Contributing
+- How to contribute to this application:
+
+
+# Test
+- Instructions for testing this application:
+
+
 ## License 
 
-License provided by:  ${renderLicenseBadge(data.license)}
+License provided by:  
+
+${renderLicenseBadge(data.license)}
 
 --- 
+
 
 # Installation
 ## To Run this Application 
 
-Use the command ${data.install} to start installation of dependencies here. 
+Use the command <em>${data.install}</em> to start installation of dependencies here. 
 
 
 `};
