@@ -4,7 +4,29 @@ const fs = require("fs");
 const path = require("path");
 
 // Function to start the file generator
-const generateFile = ({ title, github, description, license, install }) => ``;
+//const generateFile = ({ title, github, description, license, install }) => `
+const generateFile = (data) => `
+# Project Title: ${data.title} 
+
+---
+
+Here is a link to my GitHub profile: ${data.github}
+
+## Description of Project: 
+
+${data.description}
+
+## License 
+
+License provided by:  ${data.license}
+
+--- 
+
+## To Run this Application 
+
+Use the command ${data.install} to start installation of dependencies here. 
+
+`;
 
 // Array of questions for user input
 const questions = [
@@ -39,23 +61,31 @@ const questions = [
         message: "What command should be run to install dependencies?",
         default: "npm i"
     },
+    {
+        type: "confirm",
+        name: "confirm",
+        message: "Would you like a Table of Contents section?",
+    },
 ];
 
 // Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile('README.md', generateFile, (err) =>
+    fs.writeFile('./samples/README-new.md', generateFile(data), (err) =>
       err ? console.log(err) : console.log('README file is created!')
     );
-
- }
+}
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
         .then(response => {
-            console.log(response);
+            // will this work?
+            /* const newFile = generateFile(questions)
+            fs.writeFile('README-new.md', newFile); */
+            writeToFile('/samples/README-new.md', response);
+            console.log('README file is being created now!');
         })
 }
 
 // Function call to initialize app
-init();
+init(writeToFile);
