@@ -1,10 +1,9 @@
 // Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-const path = require("path");
+// const utils = require("./utils/generateMarkdown");
 
 // Function to start the file generator
-//const generateFile = ({ title, github, description, license, install }) => `
 const generateFile = (data) => {
 
     const renderLicenseBadge = (license) => {
@@ -132,9 +131,6 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
         .then(response => {
-            // will this work?
-            /* const newFile = generateFile(questions)
-            fs.writeFile('README-new.md', newFile); */
             writeToFile('./samples/README-new.md', response);
             console.log('README file is being created now!');
         })

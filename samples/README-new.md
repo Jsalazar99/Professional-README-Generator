@@ -22,7 +22,7 @@ GitHub profile:
 
 ## Description of Project: 
 
-Intro text. 
+Intro text here.
 
 ---
 
